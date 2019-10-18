@@ -38,6 +38,7 @@ public class Test
             System.out.println(mav);
             return mav;
         }else{
+
             session.setAttribute("errormsg","密码或账户输入错误，请重新输入");
         }
         mav.setViewName("login");
