@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/sxn
+    username: root
+    password: root
+  thymeleaf:
+    enabled: true
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.entity
