@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>修改页面</title>
+    <script th:src="@{/js/time.js}"></script>
+</head>
+<body>
+<form id="addnew" action="update.action" method="post">
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td><input type="text" name="username" id="username" th:attr="value=${session.upusers.usersname}"/>姓名不能重名</td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>
+                <div th:if="${session.upusers.userssex} == '男'">
+                    <input type="radio" name="usersex" value="男" checked="checked"/>男
+                    <input type="radio" name="usersex" value="女"/>女
+                </div>
+                <div th:if="${session.upusers.userssex} == '女'">
+                    <input type="radio" name="usersex" value="男"/>男
+                    <input type="radio" name="usersex" value="女" checked="checked"/>女
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>年龄</td>
+            <td><input type="text" name="userage" id="userage" th:attr="value=${session.upusers.usersage}"/>年龄在0-100之间</td>
+        </tr>
+    </table>
+
+    <div style="display: none"><input type="text" name="userid" th:attr="value=${session.upusers.usersid}"/></div>
+
+    <input type="submit" value="确认修改"/>
+</form>
+</body>
+</html>

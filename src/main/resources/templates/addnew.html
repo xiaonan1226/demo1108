@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>新增页面</title>
+</head>
+<body>
+    <form id="addnew" action="add.action" method="post">
+       <table>
+           <tr>
+               <td>姓名</td>
+               <td><input type="text" name="username" id="username"/>姓名不能重名</td>
+           </tr>
+           <tr>
+               <td>性别</td>
+               <td><input type="radio" name="usersex" checked="checked" value="男"/>男
+                   <input type="radio" name="usersex" value="女"/>女
+               </td>
+           </tr>
+           <tr>
+               <td>年龄</td>
+               <td><input type="text" name="userage" id="userage"/>年龄在0-100之间</td>
+           </tr>
+       </table>
+
+        <input type="submit" value="确认新增"/>
+    </form>
+</body>
+</html>
